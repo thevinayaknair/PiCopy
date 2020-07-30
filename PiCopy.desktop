@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0
 Name=PiCopy
-Exec=python /home/pi/PiCopy/PiCopy.py
+Exec=python /home/pi/PiCopy/PiCopy5.py
 Path=/home/pi/PiCopy/
 Terminal=False
 Type=Application
