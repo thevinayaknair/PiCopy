@@ -37,8 +37,8 @@ class PiCopy(tk.Frame):
 		self._populate_drive_list()
 
 	def _display_storage_selection(self):
-                self.source_frame.grid(row=0, column=0, padx=10, pady=10)
-                self.dest_frame.grid(row=0, column=1, padx=10, pady=10)
+                self.source_frame.grid(row=0, column=0, padx=15, pady=10)
+                self.dest_frame.grid(row=0, column=1, padx=15, pady=10)
 
 	def _populate_drive_list(self):
 		self.storage_drives = []
@@ -59,10 +59,10 @@ class PiCopy(tk.Frame):
 		dest_row_count=1
 		for storage_drive in self.storage_drives:
 			if storage_drive.locale == 'source':
-				storage_drive.button.grid(row=source_row_count, column=0, padx=5, pady=5, sticky=tk.W+tk.E)
+				storage_drive.button.grid(row=source_row_count, column=0, padx=15, pady=5, sticky=tk.W+tk.E)
 				source_row_count+=1
 			elif storage_drive.locale == 'dest':
-				storage_drive.button.grid(row=dest_row_count, column=0, padx=5, pady=5, sticky=tk.W+tk.E)
+				storage_drive.button.grid(row=dest_row_count, column=0, padx=15, pady=5, sticky=tk.W+tk.E)
 				dest_row_count+=1
 
 	def _create_callback_lambda(self, mounted_name, locale):
