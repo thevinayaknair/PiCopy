@@ -16,9 +16,9 @@ class PiCopy(tk.Frame):
 		self._init_display()
 
 	def _init_display(self):
-		self.source_frame = tk.Frame(self.frame, width=220, height=160, bd=3, relief=tk.RAISED)
+		self.source_frame = tk.Frame(self.frame, width=360, height=220, bd=3, relief=tk.RAISED)
 		self.source_frame.grid_propagate(0)
-		self.dest_frame = tk.Frame(self.frame, width=220, height=160, bd=3, relief=tk.RAISED)
+		self.dest_frame = tk.Frame(self.frame, width=360, height=220, bd=3, relief=tk.RAISED)
                 self.dest_frame.grid_propagate(0)
 
 		self._display_storage_selection()
