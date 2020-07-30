@@ -23,15 +23,15 @@ class PiCopy(tk.Frame):
 
 		self._display_storage_selection()
 
-		source_text = tk.Label(self.source_frame, text='select source')
+		source_text = tk.Label(self.source_frame, text='Select source')
                 source_text.grid(row=0, column=0, padx=5, pady=5)
-                dest_text = tk.Label(self.dest_frame, text='select destination')
+                dest_text = tk.Label(self.dest_frame, text='Select destination')
                 dest_text.grid(row=0, column=0, padx=5, pady=5)
 
-		self.reset_btn = tk.Button(self.frame, text='reset', command=lambda: self._reset_options(), bd=3, relief=tk.RAISED)
-                self.submit_btn = tk.Button(self.frame, text='confirm selection', command=lambda: self._display_confirmation(), bd=3, relief=tk.RAISED)
+		self.reset_btn = tk.Button(self.frame, text='Reset', command=lambda: self._reset_options(), bd=3, relief=tk.RAISED)
+                self.submit_btn = tk.Button(self.frame, text='Confirm selection', command=lambda: self._display_confirmation(), bd=3, relief=tk.RAISED)
 
-		quit_btn = tk.Button(self.frame, text='quit', command=self.frame.quit, bd=3, relief=tk.RAISED)
+		quit_btn = tk.Button(self.frame, text='Quit', command=self.frame.quit, bd=3, relief=tk.RAISED)
                 quit_btn.grid(row=1, column=1, ipadx=15, ipady=15, padx=10, sticky=tk.SE)
 
 		self._populate_drive_list()
@@ -138,11 +138,11 @@ class PiCopy(tk.Frame):
 
 		source_text = self.source_drive.size+'-'+self.source_drive.mounted_name
                 destination_text = self.dest_drive.size+'-'+self.dest_drive.mounted_name
-                confirmation_label = tk.Label(self.center_frame, text='copy from:: '+source_text+' to '+destination_text)
+                confirmation_label = tk.Label(self.center_frame, text='Copying from:: '+source_text+' to '+destination_text)
                 confirmation_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10)
 
-		self.confirm_copy_btn = tk.Button(self.center_frame, text='confirm', bg='red', width=20, height=5, command=lambda: self._confirm_confirmation())
-                self.cancel_copy_btn = tk.Button(self.center_frame, text='cancel', bg='light green', width=20, height=5, command=lambda: self._cancel_confirmation())
+		self.confirm_copy_btn = tk.Button(self.center_frame, text='Confirm', bg='red', width=20, height=5, command=lambda: self._confirm_confirmation())
+                self.cancel_copy_btn = tk.Button(self.center_frame, text='Cancel', bg='light green', width=20, height=5, command=lambda: self._cancel_confirmation())
                 self.confirm_copy_btn.grid(row=1, column=0, padx=5, pady=5, sticky=tk.W)
                 self.cancel_copy_btn.grid(row=1, column=1, padx=5, pady=5, sticky=tk.E)
 
@@ -176,9 +176,9 @@ class PiCopy(tk.Frame):
 
 	def _copy_setup(self):
 		self.progress_var = tk.DoubleVar()
-		progress_bar = tk.Scale(self.center_frame, length=400, orient=tk.HORIZONTAL, from_=0.0, to=100.0, resolution=0.1, tickinterval=20.0, variable=self.progress_var, label='progress')
+		progress_bar = tk.Scale(self.center_frame, length=400, orient=tk.HORIZONTAL, from_=0.0, to=100.0, resolution=0.1, tickinterval=20.0, variable=self.progress_var, label='Progress')
 		progress_bar.grid(row=1, column=0, padx=5, pady=0, columnspan=2)
-		self.start_button = tk.Button(self.frame, text='begin copy', command=self._begin_copy, bg='light green', bd=3, relief=tk.RAISED)
+		self.start_button = tk.Button(self.frame, text='Start', command=self._begin_copy, bg='light green', bd=3, relief=tk.RAISED)
 		self.start_button.grid(row=1, column=0, ipadx=15, ipady=15, padx=10, sticky=tk.SW)
 
 	def _begin_copy(self):
