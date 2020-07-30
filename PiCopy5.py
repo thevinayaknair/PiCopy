@@ -9,10 +9,9 @@ class PiCopy(tk.Frame):
 	def __init__(self, master=None):
 		tk.Frame.__init__(self, master)
 		self.grid()
-		
+
 		self.frame = tk.Frame(self)		
 		self.frame.pack_propagate(0)
-		Label(self, text = 'PiCopy', width=30).pack()
                 self.frame.pack(fill=tk.BOTH, expand=tk.TRUE)
 		self._init_display()
 
@@ -25,9 +24,9 @@ class PiCopy(tk.Frame):
 		self._display_storage_selection()
 
 		source_text = tk.Label(self.source_frame, text='Select source')
-                source_text.grid(row=0, column=0, padx=5, pady=5)
+                source_text.grid(row=0, column=0, padx=15, pady=5)
                 dest_text = tk.Label(self.dest_frame, text='Select destination')
-                dest_text.grid(row=0, column=0, padx=5, pady=5)
+                dest_text.grid(row=0, column=0, padx=15, pady=5)
 
 		self.reset_btn = tk.Button(self.frame, text='Reset', command=lambda: self._reset_options(), bd=3, relief=tk.RAISED)
                 self.submit_btn = tk.Button(self.frame, text='Confirm selection', command=lambda: self._display_confirmation(), bd=3, relief=tk.RAISED)
